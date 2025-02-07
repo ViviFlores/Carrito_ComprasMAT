@@ -62,8 +62,9 @@ export const LoginScreen = ({ users }: Props) => {
             return;
         }
 
-        //Verificar si se cambio estado del formulario
-        console.log(loginForm);
+        //Navegar al screen home
+        navigation.dispatch(CommonActions.navigate({ name: 'Home' }));
+        //console.log(loginForm);
     }
 
     return (

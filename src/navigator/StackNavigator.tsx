@@ -3,6 +3,7 @@ import { LoginScreen } from '../screens/LoginScreen';
 import { PRIMARY_COLOR } from '../theme/commons/constants';
 import { RegisterScreen } from '../screens/RegisterScreen';
 import { useState } from 'react';
+import { HomeScreen } from '../screens/HomeScreen';
 
 //Definir interface estructura de mis objetos usuarios
 export interface User {
@@ -43,6 +44,9 @@ export const StackNavigator = () => {
             <Stack.Screen name="Register"
                 options={{ headerShown: false }}
                 children={() => <RegisterScreen users={usersManager} addUsers={addUsers} />} />
+            <Stack.Screen name="Home"
+                options={{ headerShown: false }}
+                component={HomeScreen}/>
         </Stack.Navigator>
     );
 }

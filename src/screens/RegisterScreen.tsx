@@ -46,6 +46,12 @@ export const RegisterScreen = ({ users, addUsers }: Props) => {
         return existUser
     }
 
+    //Función para generar los ids de los usuarios
+    const getIdNewUser = (): number => {
+        const getIdUser = users.map(user => user.id);
+        return Math.max(...getIdUser) + 1;   //[1,2, 3]
+    }
+
     //Función para registrarme
     const handleRegister = () => {
         //Validar si el formulario está lleno
@@ -60,7 +66,20 @@ export const RegisterScreen = ({ users, addUsers }: Props) => {
             return;
         }
 
-        console.log(registerForm);
+        //Crear nuevo usuario
+        const newUser: User = {
+            id: getIdNewUser(),
+            name: registerForm.name,
+            email: registerForm.email,
+            password: registerForm.password
+        }
+
+        //Agregar nuevo usuario al arreglo users
+        addUsers(newUser)
+        Alert.alert('Registro', 'Usuario registrado con éxito')
+        //Redireccionar al login
+        navigation.goBack();
+        //console.log(registerForm);
     }
 
     return (
