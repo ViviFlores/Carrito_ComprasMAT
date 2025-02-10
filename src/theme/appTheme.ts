@@ -56,5 +56,25 @@ export const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: 'bold',
         textAlign: 'center'
+    },
+    containerCard: {
+        padding: 15,
+        borderWidth: 1,
+        borderColor: SECONDARY_COLOR,
+        borderStyle: 'solid',
+        shadowColor: '#000',
+        shadowOpacity: 0.25,
+        shadowRadius: 2.65,
+        elevation: 2,
+        marginBottom:15
+    },
+    titleCard: {
+        fontSize: 15,
+        fontWeight: 'bold',
+        color: TERTIARY_COLOR
+    },
+    imageCard: {
+        width: 60,
+        height: 60,
     }
 })
