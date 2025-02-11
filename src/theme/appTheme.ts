@@ -58,7 +58,9 @@ export const styles = StyleSheet.create({
         textAlign: 'center'
     },
     containerCard: {
-        padding: 15,
+        flexDirection: 'row',
+        alignItems: 'center',
+        padding: 10,
         borderWidth: 1,
         borderColor: SECONDARY_COLOR,
         borderStyle: 'solid',
@@ -66,7 +68,7 @@ export const styles = StyleSheet.create({
         shadowOpacity: 0.25,
         shadowRadius: 2.65,
         elevation: 2,
-        marginBottom:15
+        marginBottom: 15
     },
     titleCard: {
         fontSize: 15,
@@ -74,7 +76,33 @@ export const styles = StyleSheet.create({
         color: TERTIARY_COLOR
     },
     imageCard: {
-        width: 60,
-        height: 60,
+        width: 70,
+        height: 70,
+    },
+    containerIcon: {
+        flex: 1,
+        alignItems: 'flex-end'
+    },
+    containerModal: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+    },
+    modalProduct: {
+        padding: 20,
+        backgroundColor: 'white',
+        borderRadius: 10,
+        shadowColor: '#000',
+        shadowOpacity: 0.25,
+        shadowRadius: 4,
+        elevation: 5
+    },
+    headerModal: {
+        flexDirection: 'row',
+        borderBottomColor: '#ccc',
+        borderBottomWidth: 1,
+        borderStyle: 'solid',
+        padding: 10
     }
 })
