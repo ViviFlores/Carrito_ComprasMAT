@@ -9,9 +9,10 @@ import { ModalProduct } from './ModalProduct';
 //Definir la interface para las propiedades
 interface Props {
     product: Product;
+    handleChangeStock: (id: number, quantity: number) => void;
 }
 
-export const CardProduct = ({ product }: Props) => {
+export const CardProduct = ({ product, handleChangeStock }: Props) => {
     //hook useState para manejar la visibilidad del modal
     const [showModalProduct, setShowModalProduct] = useState<boolean>(false);
 
@@ -36,7 +37,8 @@ export const CardProduct = ({ product }: Props) => {
             <ModalProduct
                 product={product}
                 isVisible={showModalProduct}
-                setShowModalProduct={() => setShowModalProduct(!showModalProduct)} />
+                setShowModalProduct={() => setShowModalProduct(!showModalProduct)}
+                handleChangeStock={handleChangeStock} />
         </View>
     )
 }

@@ -104,5 +104,66 @@ export const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderStyle: 'solid',
         padding: 10
+    },
+    titleHeaderModal: {
+        fontSize: 17,
+        fontWeight: 'bold',
+        color: TERTIARY_COLOR
+    },
+    imageModal: {
+        width: 180,
+        height: 180
+    },
+    containerQuantity: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    buttonQuantity: {
+        backgroundColor: PRIMARY_COLOR,
+        height: 50,
+        width: 50,
+        borderRadius: 100,
+        margin: 15,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    buttonQuantityText: {
+        color: SECONDARY_COLOR,
+        fontSize: 20,
+        fontWeight: 'bold'
+    },
+    textQuantity: {
+        fontSize: 15,
+        color: TERTIARY_COLOR,
+        fontWeight: 'bold'
+    },
+    buttonAddCart: {
+        backgroundColor: PRIMARY_COLOR,
+        marginTop: 15,
+        alignItems: 'center',
+        paddingVertical: 10,
+        borderRadius: 5
+    },
+    buttonAddCartText: {
+        color: SECONDARY_COLOR,
+        fontWeight: 'bold'
+    },
+    textStock: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        color: '#801f1f',
+        textAlign: 'center'
+    },
+    headerProducts:{
+        flexDirection:'row',
+        alignItems:'center',
+    },
+    textIconCar:{
+        backgroundColor: SECONDARY_COLOR,
+        paddingHorizontal:5,
+        borderRadius: 10,
+        fontSize: 13,
+        fontWeight: 'bold',
     }
 })
