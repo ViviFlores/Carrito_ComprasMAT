@@ -155,15 +155,32 @@ export const styles = StyleSheet.create({
         color: '#801f1f',
         textAlign: 'center'
     },
-    headerProducts:{
-        flexDirection:'row',
-        alignItems:'center',
+    headerProducts: {
+        flexDirection: 'row',
+        alignItems: 'center',
     },
-    textIconCar:{
+    textIconCar: {
         backgroundColor: SECONDARY_COLOR,
-        paddingHorizontal:5,
+        paddingHorizontal: 5,
         borderRadius: 10,
         fontSize: 13,
         fontWeight: 'bold',
+    },
+    headerTableCar: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+    },
+    textHeaderTable: {
+        fontWeight: 'bold',
+        color: TERTIARY_COLOR
+    },
+    containerTotal: {
+        alignItems: 'flex-end',
+        marginVertical: 15
+    },
+    textTotal: {
+        fontWeight: 'bold',
+        paddingHorizontal: 10,
+        fontSize: 18
     }
 })

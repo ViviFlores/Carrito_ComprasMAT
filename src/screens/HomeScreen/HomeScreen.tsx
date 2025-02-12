@@ -6,6 +6,7 @@ import { BodyComponents } from '../../components/BodyComponents';
 import { CardProduct } from './components/CardProduct';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { styles } from '../../theme/appTheme';
+import { ModalCar } from './components/ModalCar';
 
 //Definir la interface para arreglo productos
 export interface Product {
@@ -17,10 +18,11 @@ export interface Product {
 }
 
 //Definir la interface para arreglo carProducts
-interface CardProduct {
+export interface CardProduct {
     id: number;
     name: string;
     price: number;
+    quantity: number;
     total: number;
 }
 
@@ -43,6 +45,9 @@ export const HomeScreen = () => {
     const [productsState, setProductsState] = useState<Product[]>(products);
     //hook usuState: permitir gestionar los productor del carrito
     const [carProducts, setCarProducts] = useState<CardProduct[]>([]);
+    //hook useState: permitir gestionar la visibilidad del modal
+    const [showModalCar, setShowModalCar] = useState<boolean>(false)
+
 
     //Función para controlar el stock
     const handleChangeStock = (id: number, quantity: number): void => { //3
@@ -67,6 +72,7 @@ export const HomeScreen = () => {
             id: product.id,
             name: product.name,
             price: product.price,
+            quantity: quantity,
             total: product.price * quantity
         }
 
@@ -77,25 +83,33 @@ export const HomeScreen = () => {
 
     return (
         <View>
-            <StatusBar backgroundColor={PRIMARY_COLOR} />
-            <View style={styles.headerProducts}>
-                <TitleComponent title='Productos' />
-                <View style={{
-                    ...styles.containerIcon,
-                    paddingHorizontal: 30
-                }}>
-                    <Text style={styles.textIconCar}>
-                        {carProducts.length}
-                    </Text>
-                    <Icon name='shopping-cart' size={28} color={SECONDARY_COLOR} />
+            <View>
+                <StatusBar backgroundColor={PRIMARY_COLOR} />
+                <View style={styles.headerProducts}>
+                    <TitleComponent title='Productos' />
+                    <View style={{
+                        ...styles.containerIcon,
+                        paddingHorizontal: 30
+                    }}>
+                        <Text style={styles.textIconCar}>
+                            {carProducts.length}
+                        </Text>
+                        <Icon name='shopping-cart'
+                            size={28}
+                            color={SECONDARY_COLOR}
+                            onPress={() => setShowModalCar(!showModalCar)} />
+                    </View>
                 </View>
+                <BodyComponents>
+                    <FlatList
+                        data={productsState}
+                        renderItem={({ item }) => <CardProduct product={item} handleChangeStock={handleChangeStock} />}
+                        keyExtractor={item => item.id.toString()} />
+                </BodyComponents>
             </View>
-            <BodyComponents>
-                <FlatList
-                    data={productsState}
-                    renderItem={({ item }) => <CardProduct product={item} handleChangeStock={handleChangeStock} />}
-                    keyExtractor={item => item.id.toString()} />
-            </BodyComponents>
+            <ModalCar isVisible={showModalCar}
+                carProducts={carProducts}
+                setShowModalCar={() => setShowModalCar(!showModalCar)} />
         </View>
     )
 }
