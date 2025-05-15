@@ -98,7 +98,7 @@ export const LoginScreen = ({ users }: Props) => {
                         style={styles.iconPassword}
                     />
                 </View>
-                <ButtonComponent title='Iniciar Git' handleSendInfo={handleLogin} />
+                <ButtonComponent title='Iniciar Git 2' handleSendInfo={handleLogin} />
                 <TouchableOpacity
                     onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'Register' }))}>
                     <Text style={styles.textRedirect}>No tienes una cuenta? Regístrate aquí</Text>
