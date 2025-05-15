@@ -73,7 +73,7 @@ export const LoginScreen = ({ users }: Props) => {
             <TitleComponent title='Iniciar Sesión Editado' />
             <BodyComponents>
                 <Text style={styles.titlePrincipal}>
-                    Bienvenido de nuevo Vivi
+                    Bienvenido de nuevo Vivi Carlos
                 </Text>
                 <Text style={styles.textDescription}>
                     Realiza tus compras de manera rápida y segura
@@ -98,7 +98,7 @@ export const LoginScreen = ({ users }: Props) => {
                         style={styles.iconPassword}
                     />
                 </View>
-                <ButtonComponent title='Iniciar Git' handleSendInfo={handleLogin} />
+                <ButtonComponent title='Iniciar Git 2' handleSendInfo={handleLogin} />
                 <TouchableOpacity
                     onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'Register' }))}>
                     <Text style={styles.textRedirect}>No tienes una cuenta? Regístrate aquí</Text>
