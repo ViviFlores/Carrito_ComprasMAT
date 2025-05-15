@@ -73,7 +73,7 @@ export const LoginScreen = ({ users }: Props) => {
             <TitleComponent title='Iniciar Sesión Editado' />
             <BodyComponents>
                 <Text style={styles.titlePrincipal}>
-                    Bienvenido de nuevo Carlos
+                    Bienvenido de nuevo Vivi Carlos
                 </Text>
                 <Text style={styles.textDescription}>
                     Realiza tus compras de manera rápida y segura
