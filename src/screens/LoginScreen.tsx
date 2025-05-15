@@ -70,7 +70,7 @@ export const LoginScreen = ({ users }: Props) => {
     return (
         <View>
             <StatusBar backgroundColor={PRIMARY_COLOR} />
-            <TitleComponent title='Iniciar Sesión' />
+            <TitleComponent title='Iniciar Sesión Editado' />
             <BodyComponents>
                 <Text style={styles.titlePrincipal}>
                     Bienvenido de nuevo
